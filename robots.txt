@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://abdul-muntakim.github.io/worth-the-upgrade/sitemap.xml
+Sitemap: https://abdul-muntakim.github.io/setupfinds-uk/sitemap.xml
