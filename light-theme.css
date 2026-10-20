@@ -35,6 +35,6 @@ body>header nav a{color:#d8e2ef}body>header nav a:hover{color:#70a5ff}.menu{colo
 .trust-note{background:#edf5ff;border-left-color:#2563eb}.budget-grid article.featured{border-color:#2563eb;box-shadow:0 12px 30px rgba(37,99,235,.12),inset 0 0 0 1px #2563eb}
 .related-guide{background:linear-gradient(135deg,#fff,#edf6ff)}
 .product-detail-visual{box-shadow:0 16px 34px rgba(16,24,40,.12)}
-.breadcrumbs,.breadcrumbs a,.micro-note{color:#667085}.breadcrumbs a:hover{color:#2563eb}
+.breadcrumbs,.breadcrumbs a,.micro-note{color:#667085}.breadcrumbs a:hover{color:#2563eb}.product-detail-copy .lead,.page-hero>p{color:#475467}
 footer{background:#0b1220;color:#d8e2ef;border-color:#1d2a3d}footer h3,footer .brand{color:#fff}footer a{color:#bccadd}footer a:hover{color:#70a5ff}.fine{color:#98a7ba;border-color:#25334a}
 @media(max-width:800px){body>header{padding:10px 18px}.hero{min-height:520px}.article-hero h1{font-size:clamp(2.35rem,12vw,3.8rem)}}
