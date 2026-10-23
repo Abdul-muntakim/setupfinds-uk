@@ -293,3 +293,5 @@ body:not(.exact-home)>header .brand img{content:url("logo.svg?v=5");width:220px!
 .exact-market{overflow:hidden;min-width:0}
 
 .exact-market{justify-content:center;padding-left:0;font-weight:800}
+
+.verdict{padding:24px}.verdict p{color:#d7e2f0!important}
