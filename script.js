@@ -21,3 +21,9 @@ if (productPage && verdict && !productPage.querySelector('.product-overview')) {
   overview.innerHTML = `<h2>${title}: what you should know</h2><p>${lead} The main reasons to shortlist it are ${positives.join(' and ').toLowerCase()}.</p><p>Before choosing it, ${checks.join(' and ').toLowerCase()}. Always confirm the exact model, compatibility and included accessories on the Amazon listing before ordering.</p>`;
   verdict.insertAdjacentElement('afterend', overview);
 }
+
+// Mark the current destination for keyboard and screen-reader navigation.
+const currentPage = location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('header nav a').forEach(link => {
+  if (link.getAttribute('href') === currentPage) link.setAttribute('aria-current', 'page');
+});

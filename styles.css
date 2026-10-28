@@ -295,3 +295,38 @@ body:not(.exact-home)>header .brand img{content:url("logo.svg?v=5");width:220px!
 .exact-market{justify-content:center;padding-left:0;font-weight:800}
 
 .verdict{padding:24px}.verdict p{color:#d7e2f0!important}
+
+/* Motion and depth: progressive enhancements; never hide content by default. */
+.exact-hero{isolation:isolate;--light-x:78%;--light-y:42%}
+.exact-hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse 38% 65% at var(--light-x) var(--light-y),rgba(34,211,238,.2),rgba(83,73,228,.08) 48%,transparent 76%);mix-blend-mode:screen}
+.exact-copy{z-index:2}
+.exact-kicker{color:#bcd5ef}
+.exact-primary,.exact-amazon,.button{position:relative;isolation:isolate;transition:background-color .2s ease,box-shadow .2s ease,border-color .2s ease}
+.exact-primary b,.exact-secondary b{display:inline-block;transition:transform .2s ease}
+.exact-card{min-height:282px;border-color:#29425f;background:radial-gradient(ellipse at 90% 0%,rgba(37,99,235,.12),transparent 65%),linear-gradient(145deg,#0b1727,#06101e);box-shadow:0 12px 30px rgba(0,0,0,.16);transition:border-color .2s ease,box-shadow .2s ease}
+.exact-card ul{bottom:76px;gap:5px;font-size:.73rem}
+.exact-card .exact-amazon{position:absolute;left:16px;right:16px;bottom:16px;min-height:44px;background:#ff9b3f;color:#171006;box-shadow:0 6px 20px rgba(255,132,37,.12)}
+.exact-card .exact-product{filter:drop-shadow(0 12px 14px rgba(0,0,0,.25))}
+.exact-card:focus-within,.product-card:focus-within{border-color:#54c9ef!important;box-shadow:0 12px 34px rgba(11,126,209,.15)!important}
+.exact-categories>a{transition:border-color .2s ease,background-color .2s ease}
+.exact-categories>a img{transition:transform .25s ease}
+.guide-grid>a{position:relative;overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease}
+.guide-grid>a::before{content:"";position:absolute;left:24px;right:24px;top:0;height:2px;background:linear-gradient(90deg,#22d3ee,rgba(37,99,235,.3),transparent);pointer-events:none}
+body>header nav a{position:relative;transition:color .2s ease}
+body>header nav a::after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;background:#22d3ee;transform:scaleX(0);transform-origin:left;transition:transform .2s ease}
+body>header nav a[aria-current="page"]{color:#65ddff!important}
+body>header nav a[aria-current="page"]::after{transform:scaleX(1)}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+  .exact-card:hover{border-color:#4186bd;box-shadow:0 18px 40px rgba(0,0,0,.3),0 0 24px rgba(34,211,238,.06)}
+  .exact-primary:hover{background:#2479ff;box-shadow:0 10px 32px rgba(37,99,235,.4)}
+  .exact-primary:hover b,.exact-secondary:hover b{transform:translateX(4px)}
+  .exact-amazon:hover{background:#ffb264;transform:none;box-shadow:0 8px 24px rgba(255,153,0,.22)}
+  .exact-categories>a:hover img{transform:translateY(-3px) scale(1.06)}
+  .guide-grid>a:hover{transform:none;border-color:#4b99c8!important;box-shadow:0 14px 32px rgba(0,0,0,.24)!important}
+  body>header nav a:hover::after{transform:scaleX(1)}
+}
+@media(max-width:800px){.exact-card{min-height:300px}.exact-card ul{bottom:78px}}
+@media(prefers-reduced-motion:reduce){
+  .exact-hero::before{background:radial-gradient(ellipse at 78% 42%,rgba(34,211,238,.1),transparent 70%)}
+  .exact-primary b,.exact-secondary b,.exact-categories>a img,.guide-grid>a,.button{transform:none!important}
+}

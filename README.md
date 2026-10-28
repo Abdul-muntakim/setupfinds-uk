@@ -20,3 +20,9 @@ Run `python3 -m http.server 8000`, then open `http://localhost:8000`. Use an HTT
 ## Deploy
 
 Push to `main`. The workflow rebuilds search, copies public website files to `_site`, and publishes that directory to GitHub Pages. Development scripts and repository metadata are not published.
+
+## Visual effects
+
+Motion's mini API powers one-time entrance transitions; Vanilla Tilt powers subtle depth on the four homepage product cards. The hero lighting follows a mouse pointer. Touch input and reduced-motion preferences disable pointer effects; changing reduced-motion preferences also cancels active animations. Content stays visible if JavaScript fails.
+
+Edit `src/effects.js`, then run `npm ci` and `npm run build` to regenerate `effects.js`. GitHub Actions also builds this bundle before deployment. The runtime needs no CDN, API key, React, 3D model or WebGL. Keep the notices in `THIRD_PARTY_NOTICES.md` when distributing the bundle.
