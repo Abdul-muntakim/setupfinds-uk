@@ -1,15 +1,14 @@
-# Redesign validation
+# Approved bright redesign validation
 
-Verified on 30 October 2026 before deployment.
+Verified 30 October 2026. `design-qa.md` records the approved-reference comparison and resolved responsive issues.
 
-- Frozen npm install, production effects build, search generation and JavaScript syntax checks passed.
-- `scripts/check_site.py` validated 40 HTML pages, local files and anchors, valid paragraph boundaries, affiliate attributes, SEO metadata and 37 search entries.
-- Compared all 40 page heads against the starting revision: titles, descriptions, canonical URLs and structured data are unchanged; only the stylesheet version changed. All affiliate destinations and their multiplicity are unchanged.
-- Chromium performed 94 page/viewport checks at 1440, 768, 390 and 320px, including all 40 pages at desktop and phone widths: no document overflow, missing primary images or JavaScript exceptions.
-- Eleven interaction assertions passed: consent offered, rejection persisted without tracking, mobile menu, Escape/focus restoration, keyboard setup tabs, reduced motion, catalogue matching, catalogue empty state, filter clearing, search matching and search empty state.
-- Desktop/mobile screenshots were inspected for the homepage, catalogue, product guide, buying-guide index, comparison and budget build. Tablet homepage also inspected.
-- Independent Impeccable visual and detector assessments were used. Corrected catalogue section IDs, missing headings, font-dependent arrows, small captions, consent size, product-image height and mobile word spacing.
-- Rendered Impeccable scan found no contrast warnings. Static contrast findings inferred black text despite the computed light foreground; computed browser colors were checked. Initial small-caption findings were fixed to 13px. Prose uses pretty wrapping.
-- Motion is optional and never conceals content. Hover and focus feedback remain useful with animation disabled. No video was added: existing still imagery is appropriate to the subject and avoids unnecessary downloads.
+- Frozen dependency installation, production effects build, search generation, JavaScript syntax checks and `git diff --check` passed.
+- Static validation covered all 40 pages: local routes/assets and anchors, one h1, paragraph boundaries, canonical URLs, descriptions, JSON-LD, affiliate-link attributes and 37 search entries.
+- All 40 page heads were compared with the starting revision: metadata unchanged apart from the stylesheet cache version. Every affiliate destination and occurrence is preserved. Analytics code, dependencies and deployment workflow are unchanged.
+- Chromium completed 94 page/viewport checks at 1440, 768, 390 and 320px, including all pages at desktop and phone widths. No document overflow, missing primary images or JavaScript exceptions.
+- Eleven existing interaction assertions passed: first-visit consent, persisted rejection without tracking, mobile menu, Escape/focus restoration, keyboard setup tabs, reduced motion, catalogue match/empty/clear states and search match/empty states.
+- Additional browser pointer tests verify the new discovery CTA at desktop, tablet and phone widths, including its five actual category destinations. Static checks validate the new header routes and setup-guide anchor.
+- Exact-reference capture at 1435×1096 and responsive captures at 768×1024, 390×844 and 320×844 were visually inspected. Independent Impeccable visual and accessibility assessments cleared P0/P1/P2 findings. The final oak section is 334px at the reference width.
+- Rendered detector: no contrast findings. Its one section-label warning intentionally matches the approved source. Measured body/secondary/action contrast exceeds WCAG AA.
 
-The screenshots here document the implementation. Deployment uses the existing GitHub Pages workflow; publishing a cloud environment is not part of website deployment. Confirm the corresponding GitHub Actions run and request the live page before reporting it live.
+Screenshots are committed in `docs/screenshots`. New assets are standalone optimized images, with provenance in `docs/asset-sources.md`. GitHub Pages remains the existing hosting/deployment mechanism. Publication of a cloud environment does not deploy this website.

@@ -21,7 +21,7 @@ document.addEventListener('keydown', event => {
 document.addEventListener('click', event => {
   if (!event.target.closest('.site-header')) closeMenu();
 });
-matchMedia('(min-width: 801px)').addEventListener('change', closeMenu);
+matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
 
 // A useful choice, using existing build guides rather than made-up budget totals.
 const tabs = [...document.querySelectorAll('.setup-tabs [role="tab"]')];

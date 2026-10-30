@@ -15,8 +15,8 @@ function reveal(element, delay = 0) {
 }
 function start() {
   if (reducedMotion.matches || !('IntersectionObserver' in window)) return;
-  // The room and its shortlist arrive as a pair. Only key editorial moments move.
-  document.querySelectorAll('.hero-copy, .hero-media').forEach((el, i) => reveal(el, i * 0.06));
+  // A brief entrance for the copy; photography stays still and immediately visible.
+  document.querySelectorAll('.hero-copy').forEach((el, i) => reveal(el, i * 0.06));
   observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
@@ -24,7 +24,7 @@ function start() {
       reveal(entry.target);
     });
   }, { threshold: 0.08 });
-  document.querySelectorAll('.section-intro, .section-heading, .setup-studio, .article-hero, .product-detail-hero, .footer-top, .category-row, .spotlight-image').forEach(el => observer.observe(el));
+  document.querySelectorAll('.section-heading, .setup-inspiration, .article-hero, .product-detail-hero').forEach(el => observer.observe(el));
 }
 reducedMotion.addEventListener('change', () => {
   observer?.disconnect();

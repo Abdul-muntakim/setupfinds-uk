@@ -1,29 +1,31 @@
 # Setup Finds UK visual system
 
-The website helps UK readers find a worthwhile gaming or desk upgrade, compare trade-offs and build a balanced shortlist. It is research-led, not a claim of hands-on testing. Prices remain on the retailer's listing.
+## Approved visual target
 
-## Direction
+The user-supplied 1435×1096 reference is the visual authority: white backgrounds, restrained cool-grey surfaces, near-black headings, readable grey body copy, vivid blue actions and natural oak/white/silver desk imagery. The reference overrides conflicting Taste or Impeccable aesthetic defaults. The site retains plain HTML/CSS/JavaScript.
 
-Taste's split-stage composition makes the desk itself one half of the homepage and the buying advice the other. The name's “finds” becomes an editorial shortlist: browse by the problem to solve, inspect selected gear, then plan the whole setup. Inner reading pages prioritize comprehension over display effects.
+## Composition and tokens
 
-One family, Clash Grotesk, carries the visual system. Deep green-black (#101412), off-white (#f0f3eb) and lime (#c5f36b) are the primary roles. The palette preserves the existing brand's green and the use scene of an evening gaming desk, replacing the dealt light palette. Paper (#edf0e8) marks the setup planner and positive buying considerations. Use flat fills and square corners; no glass or decorative gradients. Neutral image scrims are for legibility only.
+- Base `#ffffff`; surface `#f5f7fa`; raised `#edf1f6`; divider `#e2e7ee`.
+- Heading/body ink `#101215`; secondary text `#596272`; action blue `#075bfa`, white action text.
+- Existing self-hosted Clash Grotesk at 400/500/600, with a stronger display weight, follows the target's compact modern sans-serif character.
+- Shared frame: up to 1440px; desktop inset around 76px; phone inset 20px. Main text measure up to 68 characters.
+- Header 60px on desktop: branding, Gear / Setup ideas / Buying guides, search and affiliate disclosure. Phone menu supports Escape/focus restoration.
+- Desktop hero is approximately 488px at 1435px width. Its image is a standalone environmental asset, with real HTML copy and the real discovery link laid over its quiet left side. Tablet text and imagery use separate columns; phones stack the copy and crop.
+- Five category links reflect the actual content, not the mockup's unsupported monitor/chair/desk catalogue. Use “Gaming mouse” while retaining the published `gaming-mice.html` URL. Three existing exact product images are reused; generic PS5 and desk images carry visible category-illustration captions.
+- The oak setup section uses a 39/61 split and 334px desktop height. The copy and guide link remain real HTML; the image is cropped naturally.
+- Existing recommendations, the keyboard-accessible budget/performance/premium selector, buying-guide links and a compact useful footer continue below the reference.
 
-## Layout and components
+## Interaction and accessibility
 
-Use the shared `--space` outer margin and a 1440px maximum width. Give distinct sections breathing room; keep paragraph measures near 68 characters. Hero typography is oversized, editorial reading headings are quieter. Every page shares the header, category wayfinding where useful, and the designed footer. Catalogue cards prioritize the product image, suitability, then the internal guide. Retailer links retain the exact original variant and affiliate destination.
+Taste is used for composition and cross-page consistency, Impeccable for independent visual/accessibility checks, and Animate for restrained 150–280ms interaction feedback. The approved reference's thin dividers, small disclosure and section label are intentional exceptions to generic skill preferences.
 
-The setup choice is a real keyboard-accessible tablist. The catalogue filter has a live count, empty state and a clearing path. The static catalogue and links remain available without JavaScript. Search keeps its existing URL, ranking, loading/error states and query history.
+Animate only brief transform/opacity entrances and small hover/press feedback. Photography remains still. Content starts visible, and active animations cancel when reduced motion changes. Native links, visible focus, tab semantics, search, catalogue loading/empty/error states and analytics choices remain functional.
 
-## Motion and access
+Computed contrast checks: primary ink 18.76:1; secondary text 6.15:1; tablet hero copy 5.96:1; blue/white actions 5.40:1. Body copy is 17px desktop, 16px phones. Secondary illustration captions are 12px.
 
-Animate's 150–280ms timing and exponential easing are adapted to static HTML and the existing Motion mini API. Animate only transform and opacity, never leave content hidden, cancel active animations when reduced motion changes, and keep visible keyboard focus. Avoid perpetual motion, pointer spotlights and tilt. Shared actions use authored SVG arrows rather than font-dependent icon glyphs.
+## Assets and verification
 
-## Sources and maintenance
+See `docs/asset-sources.md` for generated-asset provenance and exact-product thumbnail sources. Existing fonts and their licence remain in `assets/fonts`. New imagery is optimized WebP, with explicit dimensions and lazy loading below the hero. No product prices, specifications, reviews or testing claims were added.
 
-- Taste Skill: https://github.com/Leonxlnx/taste-skill — composition and screenshot inspection.
-- Impeccable: https://github.com/pbakaus/impeccable — independent critique, rendered evidence and finishing pass.
-- Animate: https://github.com/delphi-ai/animate-skill — timing, performance and accessibility.
-- Clash Grotesk is supplied by Indian Type Foundry / Fontshare. Original, unmodified webfonts are self-hosted for this website; licence is in `assets/fonts/FFL.txt`.
-- All imagery is reused from the existing repository. Existing category illustrations remain visibly captioned. No external stock assets, fabricated product photographs, prices, reviews or specifications were added. The header mark is an original SVG.
-
-Run `npm ci`, `npm run build`, `python3 scripts/build_search.py`, then `python3 scripts/check_site.py`. Inspect desktop and mobile views after shared CSS or navigation changes. Keep analytics consent and affiliate tracking intact.
+Run `npm ci`, `npm run build`, `python3 scripts/build_search.py`, and `python3 scripts/check_site.py`; then inspect desktop/tablet/phone screenshots and exercise the real navigation, discovery anchor, setup tabs, catalogue filtering, search and consent. `design-qa.md` records the approved-target comparison and fixes.

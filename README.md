@@ -23,9 +23,9 @@ Push to `main`. The workflow rebuilds search, copies public website files to `_s
 
 ## Visual effects
 
-Motion's mini API powers one-time entrance transitions; Vanilla Tilt powers subtle depth on the four homepage product cards. The hero lighting follows a mouse pointer. Touch input and reduced-motion preferences disable pointer effects; changing reduced-motion preferences also cancels active animations. Content stays visible if JavaScript fails.
+The existing Motion mini API powers brief optional entrance transitions. CSS provides subtle hover and press feedback. Content is visible without JavaScript, and reduced-motion preferences cancel animation. The bright hero and oak setup images are standalone WebP assets; all text, navigation, search and buttons are real HTML. New image provenance is documented in `docs/asset-sources.md`.
 
-Edit `src/effects.js`, then run `npm ci` and `npm run build` to regenerate `effects.js`. GitHub Actions also builds this bundle before deployment. The runtime needs no CDN, API key, React, 3D model or WebGL. Keep the notices in `THIRD_PARTY_NOTICES.md` when distributing the bundle.
+Edit `src/effects.js`, then run `npm ci` and `npm run build` to regenerate `effects.js`. GitHub Actions also builds this bundle before deployment. The runtime needs no CDN, API key, React, 3D model or WebGL. Keep `THIRD_PARTY_NOTICES.md` when distributing the bundle.
 
 ## Design and validation
 
