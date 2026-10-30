@@ -141,3 +141,9 @@ INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
 LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
+## Clash Grotesk
+
+Clash Grotesk by Indian Type Foundry, supplied through Fontshare:
+https://www.fontshare.com/fonts/clash-grotesk
+
+The original, unmodified 400, 500 and 600 WOFF2 files are self-hosted exclusively for this website. See `assets/fonts/FFL.txt` for the ITF Free Font License. Source distribution: https://api.fontshare.com/v2/fonts/download/clash-grotesk

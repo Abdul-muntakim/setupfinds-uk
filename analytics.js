@@ -24,7 +24,7 @@
     const banner = document.createElement('aside');
     banner.className = 'cookie-consent';
     banner.setAttribute('aria-label', 'Analytics cookie choices');
-    banner.innerHTML = `<div><strong>Help us improve Setup Finds</strong><p>With your permission, Google Analytics helps us understand which guides are useful and when visitors follow an Amazon link. <a href="privacy.html">Privacy details</a></p></div><div class="cookie-actions"><button type="button" data-cookie-choice="rejected">Reject analytics</button><button type="button" class="accept" data-cookie-choice="accepted">Accept analytics</button></div>`;
+    banner.innerHTML = `<div><strong>Optional analytics</strong><p>With your permission, we measure guide visits and affiliate clicks. <a href="privacy.html">Privacy details</a></p></div><div class="cookie-actions"><button type="button" data-cookie-choice="rejected">Reject analytics</button><button type="button" class="accept" data-cookie-choice="accepted">Accept analytics</button></div>`;
     document.body.appendChild(banner);
     banner.addEventListener('click', event => {
       const choice = event.target.closest('[data-cookie-choice]')?.dataset.cookieChoice;

@@ -26,3 +26,18 @@ Push to `main`. The workflow rebuilds search, copies public website files to `_s
 Motion's mini API powers one-time entrance transitions; Vanilla Tilt powers subtle depth on the four homepage product cards. The hero lighting follows a mouse pointer. Touch input and reduced-motion preferences disable pointer effects; changing reduced-motion preferences also cancels active animations. Content stays visible if JavaScript fails.
 
 Edit `src/effects.js`, then run `npm ci` and `npm run build` to regenerate `effects.js`. GitHub Actions also builds this bundle before deployment. The runtime needs no CDN, API key, React, 3D model or WebGL. Keep the notices in `THIRD_PARTY_NOTICES.md` when distributing the bundle.
+
+## Design and validation
+
+The shared responsive system is documented in `DESIGN.md`. The homepage setup selector supports arrow keys, Home and End. The all-gear catalogue supports local filtering; the original category links work without JavaScript. Motion respects reduced-motion settings and never hides the underlying content.
+
+After editing, run:
+
+```sh
+npm ci
+npm run build
+python3 scripts/build_search.py
+python3 scripts/check_site.py
+```
+
+The static check validates local routes and anchors, affiliate-link attributes, page descriptions, canonical URLs, JSON-LD and the generated search index. Also inspect desktop and mobile layouts and exercise the menu, catalogue filter, setup tabs, search and analytics choice before deployment.
